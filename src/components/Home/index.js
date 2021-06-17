@@ -46,6 +46,7 @@ function Home() {
                       href={itm.html_url}
                       className="btn btn-dark"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Visit Repository
                     </a>
