@@ -7,7 +7,9 @@ function CardRepositories({ itm }) {
         <div className={`card-body `}>
           <div class={`row ${style.content}`}>
             <h5 className="col-12 text-truncate">{itm.name}</h5>
-            <p className={`card-text`}>{itm.language}</p>
+            {itm.language && (
+              <p className={`card-text`}>Language : {itm.language}</p>
+            )}
           </div>
           <a
             href={itm.html_url}
