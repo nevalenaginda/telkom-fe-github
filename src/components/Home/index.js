@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import axios from "axios";
+import CardRepositories from "../CardRepositories";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -13,7 +14,7 @@ function Home() {
       .catch((err) => {});
   }, []);
   return (
-    <div>
+    <div className="bg-light">
       <nav className="navbar navbar-dark bg-dark">
         <div className="container">
           <div className={style.logo}>My Github</div>
@@ -30,29 +31,11 @@ function Home() {
           </form>
         </div>
       </nav>
-      <div className="container">
-        <div className="row bg-danger mx-auto mt-5">
+      <div className="container min-vh-100">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-1 mt-5">
           {data &&
             data.map((itm, id) => {
-              return (
-                <div
-                  className="card mx-3 my-3"
-                  style={{ width: "450px", border: "3px solid black" }}
-                >
-                  <div className="card-body">
-                    <h5 className="card-title">{itm.name}</h5>
-                    <p className="card-text">{itm.language}</p>
-                    <a
-                      href={itm.html_url}
-                      className="btn btn-dark"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Visit Repository
-                    </a>
-                  </div>
-                </div>
-              );
+              return <CardRepositories itm={itm} />;
             })}
         </div>
       </div>

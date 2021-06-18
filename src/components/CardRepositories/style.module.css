@@ -1,0 +1,12 @@
+.content{
+    height: 70px;
+    display: block
+}
+
+.zoomOut {
+    transition: transform .2s; /* Animation */
+  }
+
+.zoomOut:hover{
+    transform: scale(0.9);
+}

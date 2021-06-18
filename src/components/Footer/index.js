@@ -5,12 +5,14 @@ function Footer() {
     <footer className="bg-dark mt-5">
       <div
         className="container d-flex justify-content-center  align-items-center"
-        style={{ height: "100px" }}
+        style={{
+          height: "100px",
+        }}
       >
         <a
           className="text-white"
           style={{
-            fontSize: "25px",
+            fontSize: "20px",
             fontWeight: "600",
             textDecoration: "none",
           }}
@@ -18,9 +20,9 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          © Nevalen Aginda Prasetyo 2021
-        </a>
-      </div>
+          © Nevalen Aginda Prasetyo 2021{" "}
+        </a>{" "}
+      </div>{" "}
     </footer>
   );
 }
