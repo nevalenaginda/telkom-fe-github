@@ -78,7 +78,7 @@ function Home() {
             Sort
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li onClick={() => setSort("updated_at")}>
+            <li onClick={() => setSort("updated_at")} key={"li1"}>
               <div style={{ width: "25px" }} className="d-inline-block">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ function Home() {
             </li>
             <hr className="p-0 m-0" />
 
-            <li onClick={() => setSort("name")}>
+            <li onClick={() => setSort("name")} key={"li2"}>
               <div style={{ width: "25px" }} className="d-inline-block">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,6 +120,7 @@ function Home() {
               onClick={() => {
                 setSort("stargazers_count");
               }}
+              key={"li3"}
             >
               <div style={{ width: "25px" }} className="d-inline-block">
                 <svg
@@ -153,7 +154,7 @@ function Home() {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
               />
             </svg>
@@ -167,7 +168,7 @@ function Home() {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
               />
             </svg>
@@ -190,7 +191,7 @@ function Home() {
         ) : !err.status ? (
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-1 mt-5">
             {data.map((itm, id) => {
-              return <CardRepositories itm={itm} />;
+              return <CardRepositories itm={itm} key={id} />;
             })}
           </div>
         ) : (
@@ -218,7 +219,7 @@ function Home() {
             type="button"
             className="btn btn-dark shadow"
             onClick={() => setPage(page + 1)}
-            disabled={nextData.length < 1}
+            disabled={nextData.length < 1 || err.status}
           >
             Next
           </button>

@@ -2,10 +2,10 @@ import React from "react";
 import style from "./style.module.css";
 function CardRepositories({ itm }) {
   return (
-    <div className="col">
+    <div className="col" key={itm.id}>
       <div className={`card shadow mx-3 my-3 ${style.zoomOut}`}>
         <div className={`card-body `}>
-          <div class={`row ${style.content}`}>
+          <div className={`row ${style.content}`}>
             <h5 className="col-12 text-truncate">{itm.name}</h5>
             {itm.language && (
               <p className={`card-text`}>Language : {itm.language}</p>

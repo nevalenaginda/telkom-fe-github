@@ -20,9 +20,9 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          © Nevalen Aginda Prasetyo 2021{" "}
-        </a>{" "}
-      </div>{" "}
+          © Nevalen Aginda Prasetyo
+        </a>
+      </div>
     </footer>
   );
 }
